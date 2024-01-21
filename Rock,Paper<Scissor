@@ -74,10 +74,10 @@ int main()
    cout<<" Computer score is: "<<computerscore<<endl;
 
    //anouncing results
-   if(yourscore==computerscore)
+   if(yourscore>computerscore)
     cout<<"\n******\nYou win the match\n******"<<endl;
 
-   else if(yourscore>computerscore)
+   else if(yourscore==computerscore)
      cout<<"\n******\nMatch tie\n******"<<endl;
    else 
     cout<<"\n******\nComputer win the match\n******"<<endl;
