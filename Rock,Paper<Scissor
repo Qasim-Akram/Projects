@@ -1,0 +1,88 @@
+#include<iostream>
+#include<cstdlib>
+#include<time.h>
+using namespace std;
+
+//function for getting a  random 'number from computer
+int computerchoise(int x)
+   {
+    srand(time(0));
+    x=rand()%3+1;
+    return x;}
+
+int main()
+{   
+    
+    int yourchoise,x;
+     int computerscore=0,yourscore=0;
+
+     cout<<"-------------------------------\n  welcome to Rock,Scissor,Scissor\n-------------------------------"<<endl;
+    
+      for(int i=1;i<=5;i++)
+      { 
+        cout<<i<<":: "<<" Enter you choise: \npress 1 for (Rock) : \npress 2 for (Scissor) : \npress 3 for (Paper) :"<<endl;
+        cin>>yourchoise;
+
+          //for user 
+           switch(yourchoise) 
+            {case 1:
+             cout<<"\n*****\nYou chose stone "<<endl;
+             break;
+    
+             case 2:
+             cout<<"\n*****\nYou chose Scissor "<<endl;
+            break;
+    
+             case 3:
+             cout<<"\n*****\nYour chose Paper "<<endl;
+            break;}
+
+
+            //for computer
+           switch(computerchoise(x))
+           {case 1:
+            cout<<"Computer chose Rock"<<endl;
+            break;
+    
+            case 2:
+            cout<<"Computer chose Scissor"<<endl;
+            break;
+    
+            case 3:
+            cout<<"Computer  chose Paper"<<endl;
+            break;}
+
+           //checking conditions
+        if(yourchoise==computerchoise(x))
+        cout<<"---------\nRound tie\n--------"<<endl;
+         
+        else if(/*yourchoise==1 && random(x)==2 ||*/ yourchoise==2 && computerchoise(x)==3 || yourchoise==3 && computerchoise(x)==1)
+       
+        {cout<<"----------\nYou win\n---------- "<<endl;
+         yourscore++;
+        }
+
+        else
+         {cout<<"-------------\ncomputer win\n-------------"<<endl;
+          computerscore++;
+         }
+      
+    }
+
+   //scores
+   cout<<"  After 5 round\n-------------\nYour score is: "<<yourscore<<endl;
+   cout<<" Computer score is: "<<computerscore<<endl;
+
+   //anouncing results
+   if(yourscore==computerscore)
+    cout<<"\n******\nYou win the match\n******"<<endl;
+
+   else if(yourscore>computerscore)
+     cout<<"\n******\nMatch tie\n******"<<endl;
+   else 
+    cout<<"\n******\nComputer win the match\n******"<<endl;
+
+
+return 0;
+}
+
